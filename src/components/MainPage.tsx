@@ -14,7 +14,6 @@ class MainPage extends React.Component<MainPageProps, MainPageState> {
     return (
       <div>
         <SignUp />
-        <p>Hello form MainPage</p>
       </div>
     );
   }

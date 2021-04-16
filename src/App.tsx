@@ -7,7 +7,9 @@ import Footer from "./components/Footer";
 const App: React.FunctionComponent = () => {
   return (
     <div className="App">
-      <MainPage />
+      <Switch>
+        <Route exact path="/" component={() => <MainPage />} />
+      </Switch>
       <Footer />
     </div>
   );
