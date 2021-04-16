@@ -1,4 +1,5 @@
 import React from "react";
+import SignUp from "./SignUp";
 
 export interface MainPageProps {}
 
@@ -12,6 +13,7 @@ class MainPage extends React.Component<MainPageProps, MainPageState> {
   render() {
     return (
       <div>
+        <SignUp />
         <p>Hello form MainPage</p>
       </div>
     );

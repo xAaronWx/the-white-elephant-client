@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
+import MainPage from "./components/MainPage";
 import Footer from "./components/Footer";
-import SiteBar from "./components/Sitebar";
 
 const App: React.FunctionComponent = () => {
   return (
     <div className="App">
-      <SiteBar />
+      <MainPage />
       <Footer />
     </div>
   );
