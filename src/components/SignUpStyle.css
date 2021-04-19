@@ -4,15 +4,15 @@ div {
 }
 
 .wrapper {
+  height: 90vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 90vh;
+  align-items: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* align-items: center; */
   background-image: url("../assets/WhiteElephant-BG.png");
 }
 
@@ -73,18 +73,20 @@ button {
   padding: 0.938em;
   border: none;
   border-radius: 4px;
-  background-color: rgb(22, 165, 58);
+  background-color: #194350;
   color: #fefefe;
 }
 button:hover {
-  background-color: rgb(6, 73, 11);
+  background-color: #ff8882;
   color: #fefefe;
 }
 
-.username,
+.firstName,
+.lastName,
 .email,
 .password {
   display: flex;
+  text-align: start;
   flex-direction: column;
   margin-bottom: 15px;
   width: 100%;
