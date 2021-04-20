@@ -81,6 +81,13 @@ export class SignUp extends React.Component<SignUpProps, SignUpState> {
     const { errors } = this.state;
     return (
       <div className="wrapper">
+        <div>
+          <h1 className="heroTitle">The White Elephant</h1>
+          <h4 className="subtitle">
+            Find a home for that special gift you’ve never wanted!
+          </h4>
+        </div>
+
         <div className="form-wrapper">
           <h2>Register</h2>
           <form onSubmit={this.handleSubmit} noValidate>

@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 import SignUp from "./SignUp";
 
 export interface MainPageProps {}
@@ -14,6 +15,7 @@ class MainPage extends React.Component<MainPageProps, MainPageState> {
     return (
       <div>
         <SignUp />
+        <Footer />
       </div>
     );
   }

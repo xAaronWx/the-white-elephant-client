@@ -1,3 +1,29 @@
+/* font-family: 'Cairo', sans-serif;
+font-family: 'Reem Kufi', sans-serif; */
+
 .App {
   text-align: center;
+}
+
+.heroTitle {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 15px;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 5em;
+  color: #194350;
+}
+
+.subtitle {
+  margin: 0;
+  padding: 20px;
+  font-family: "Cairo", sans-serif;
+  font-size: 30px;
+  color: #194350;
+}
+
+.footer {
+  margin: 0;
+  padding: 0;
+  background-color: #194350;
 }
