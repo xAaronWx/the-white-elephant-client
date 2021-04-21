@@ -1,4 +1,6 @@
+import userEvent from "@testing-library/user-event";
 import React from "react";
+import APIURL from "../../../helpers/environment";
 
 const Regex = RegExp(
   /^\s?[A-Z0–9]+[A-Z0–9._+-]{0,}@[A-Z0–9._+-]+\.[A-Z0–9]{2,4}\s?$/i
@@ -71,6 +73,22 @@ export class SignUp extends React.Component<SignUpProps, SignUpState> {
     );
     if (validity == true) {
       // THIS IS WHERE THE ENDPOINT FETCH GOES
+      fetch("http://localhost:3000/user/create", {
+        method: "POST",
+        body: JSON.stringify({
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password,
+        }),
+        headers: new Headers({
+          "Content-Type": "application/json",
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          this.props.updateToken(data.sessionToken);
+        });
       console.log("Registration can be done");
     } else {
       console.log("You cannot be registered");
