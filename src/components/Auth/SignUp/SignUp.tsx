@@ -76,10 +76,10 @@ export class SignUp extends React.Component<SignUpProps, SignUpState> {
       fetch("http://localhost:3000/user/create", {
         method: "POST",
         body: JSON.stringify({
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          password: password,
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          email: this.state.email,
+          password: this.state.password,
         }),
         headers: new Headers({
           "Content-Type": "application/json",
