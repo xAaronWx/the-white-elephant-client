@@ -1,18 +1,16 @@
 import React from "react";
-import "./SignUpStyle.css";
 
 const Regex = RegExp(
   /^\s?[A-Z0–9]+[A-Z0–9._+-]{0,}@[A-Z0–9._+-]+\.[A-Z0–9]{2,4}\s?$/i
 );
 
-interface SignUpProps {
+interface LogInProps {
+  handleToggle: Function;
   name?: any;
   value?: any;
 }
 
-interface SignUpState {
-  firstName: string;
-  lastName: string;
+interface LogInState {
   email: string;
   password: string;
   errors: {
@@ -22,12 +20,10 @@ interface SignUpState {
   };
 }
 
-export class SignUp extends React.Component<SignUpProps, SignUpState> {
-  constructor(props: SignUpProps) {
+export class LogIn extends React.Component<LogInProps, LogInState> {
+  constructor(props: LogInProps) {
     super(props);
     const initialState = {
-      firstName: "",
-      lastName: "",
       email: "",
       password: "",
       errors: {
@@ -84,25 +80,14 @@ export class SignUp extends React.Component<SignUpProps, SignUpState> {
         <div>
           <h1 className="heroTitle">The White Elephant</h1>
           <h4 className="subtitle">
-            Find a home for that special gift you’ve never wanted!
+            Find a home for that <span id="subUnderline">special</span> gift
+            you’ve never wanted!
           </h4>
         </div>
 
         <div className="form-wrapper">
-          <h2>Register</h2>
+          <h2>Login</h2>
           <form onSubmit={this.handleSubmit} noValidate>
-            <div className="firstName">
-              <label htmlFor="firstName">First Name</label>
-              <input
-                type="text"
-                name="firstName"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="lastName">
-              <label htmlFor="lastName">Last Name</label>
-              <input type="text" name="lastName" onChange={this.handleChange} />
-            </div>
             <div className="email">
               <label htmlFor="email">Email</label>
               <input type="email" name="email" onChange={this.handleChange} />
@@ -124,13 +109,16 @@ export class SignUp extends React.Component<SignUpProps, SignUpState> {
               )}
             </div>
             <div className="submit">
-              <button>Register Me</button>
+              <button>Log In</button>
             </div>
           </form>
+          <button onClick={(event) => this.props.handleToggle(event)}>
+            Go back and register
+          </button>
         </div>
       </div>
     );
   }
 }
 
-export default SignUp;
+export default LogIn;
