@@ -2,7 +2,9 @@ import React from "react";
 import Login from "./Login/LogIn";
 import SignUp from "./SignUp/SignUp";
 
-export interface AuthProps {}
+export interface AuthProps {
+  updateToken: Function;
+}
 
 export interface AuthState {
   showLogin: boolean;
@@ -27,9 +29,15 @@ class Auth extends React.Component<AuthProps, AuthState> {
     return (
       <div>
         {this.state.showLogin ? (
-          <Login handleToggle={this.handleToggle} />
+          <Login
+            handleToggle={this.handleToggle}
+            updateToken={this.props.updateToken}
+          />
         ) : (
-          <SignUp handleToggle={this.handleToggle} />
+          <SignUp
+            handleToggle={this.handleToggle}
+            updateToken={this.props.updateToken}
+          />
         )}
         {/* <SignUp handleToggle={this.handleToggle} /> */}
       </div>

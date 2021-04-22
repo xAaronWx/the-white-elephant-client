@@ -7,6 +7,7 @@ const Regex = RegExp(
 );
 
 interface SignUpProps {
+  updateToken: Function;
   handleToggle: Function;
   name?: any;
   value?: any;
@@ -87,6 +88,7 @@ export class SignUp extends React.Component<SignUpProps, SignUpState> {
       })
         .then((response) => response.json())
         .then((data) => {
+          console.log(data);
           this.props.updateToken(data.sessionToken);
         });
       console.log("Registration can be done");

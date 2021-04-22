@@ -5,6 +5,7 @@ const Regex = RegExp(
 );
 
 interface LogInProps {
+  updateToken: Function;
   handleToggle: Function;
   name?: any;
   value?: any;
@@ -67,9 +68,24 @@ export class LogIn extends React.Component<LogInProps, LogInState> {
     );
     if (validity == true) {
       // THIS IS WHERE THE ENDPOINT FETCH GOES
-      console.log("Registration can be done");
+      fetch("http://localhost:3000/user/login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: this.state.email,
+          password: this.state.password,
+        }),
+        headers: new Headers({
+          "Content-Type": "application/json",
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          this.props.updateToken(data.sessionToken);
+        });
+      console.log("Login was successful");
     } else {
-      console.log("You cannot be registered");
+      console.log("You cannot be logged in");
     }
   };
 
