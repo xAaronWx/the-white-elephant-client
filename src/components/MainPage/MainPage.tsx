@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../Footer";
+// import Footer from "../Footer";
 import Sitebar from "../Sitebar";
 import AddressInfo from "../Address/AddressInfo";
-import GiftInfo from "../Gift/GiftInfo";
+import YourGifts from "../Gift/GiftInfo";
 import FindGifts from "../Gift/FindGifts";
 import { Switch, Route } from "react-router-dom";
 
@@ -19,14 +19,14 @@ class MainPage extends React.Component<MainPageProps, MainPageState> {
   }
   render() {
     return (
-      <div>
+      <div className="giftBackground">
         <Sitebar />
         <Switch>
           <Route exact path="/Profile" component={AddressInfo} />
-          <Route exact path="/Gifts" component={GiftInfo} />
+          <Route exact path="/YourGifts" component={YourGifts} />
           <Route exact path="/FindGifts" component={FindGifts} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }

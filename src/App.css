@@ -26,6 +26,13 @@ font-family: 'Reem Kufi', sans-serif; */
   text-decoration: underline;
 }
 
+.giftBackground {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #9dbeb9;
+}
+
 .footer {
   margin: 0;
   padding: 0;

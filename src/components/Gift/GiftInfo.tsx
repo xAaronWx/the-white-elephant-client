@@ -1,4 +1,5 @@
 import React from "react";
+import FindGifts from "./FindGifts";
 
 export interface GiftInfoProps {}
 
@@ -10,7 +11,11 @@ class GiftInfo extends React.Component<GiftInfoProps, GiftInfoState> {
     this.state = {};
   }
   render() {
-    return <div>Gift Info</div>;
+    return (
+      <div>
+        <FindGifts />
+      </div>
+    );
   }
 }
 

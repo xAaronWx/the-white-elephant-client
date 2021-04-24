@@ -6,8 +6,21 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 
+export interface ButtonAppBarProps {}
+
+export interface ButtonAppBarState {}
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    appBar: {
+      backgroundColor: "#FFC2B4",
+      color: "#194350",
+      boxShadow: "0px 0px 0px 0px",
+    },
+    appButton: {
+      backgroundColor: "#194350",
+      margin: "10px",
+    },
     root: {
       flexGrow: 1,
     },
@@ -15,7 +28,12 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: theme.spacing(2),
     },
     title: {
-      flexGrow: 1,
+      textAlign: "left",
+      flexGrow: 4,
+    },
+    navLink: {
+      color: "white",
+      textDecoration: "none",
     },
   })
 );
@@ -25,22 +43,46 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar className={classes.appBar} position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            Work ?
+            Hello
           </Typography>
-          <Button variant="contained" color="primary">
-            <Link to="/Profile">Profile</Link>
+          <Button
+            className={classes.appButton}
+            variant="contained"
+            color="default"
+          >
+            <Link className={classes.navLink} to="/Profile">
+              Profile
+            </Link>
           </Button>
-          <Button variant="contained" color="primary">
-            <Link to="/Gifts">Your Gifts</Link>
+          <Button
+            className={classes.appButton}
+            variant="contained"
+            color="default"
+          >
+            <Link className={classes.navLink} to="/YourGifts">
+              Your Gifts
+            </Link>
           </Button>
-          <Button variant="contained" color="primary">
-            <Link to="/FindGifts">Search for Gifts</Link>
+          <Button
+            className={classes.appButton}
+            variant="contained"
+            color="default"
+          >
+            <Link className={classes.navLink} to="/FindGifts">
+              Search for Gifts
+            </Link>
           </Button>
-          <Button variant="contained" color="primary">
-            <Link to="/">Logout</Link>
+          <Button
+            className={classes.appButton}
+            variant="contained"
+            color="default"
+          >
+            <Link className={classes.navLink} to="/">
+              Logout
+            </Link>
           </Button>
         </Toolbar>
       </AppBar>
