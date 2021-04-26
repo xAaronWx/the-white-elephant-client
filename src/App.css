@@ -5,7 +5,8 @@ font-family: 'Reem Kufi', sans-serif; */
   text-align: center;
 }
 
-.heroTitle {
+.heroTitle,
+.mainTitle {
   margin: 0;
   padding: 0;
   letter-spacing: 15px;

@@ -19,7 +19,7 @@ class MainPage extends React.Component<MainPageProps, MainPageState> {
   }
   render() {
     return (
-      <div className="giftBackground">
+      <div>
         <Sitebar />
         <Switch>
           <Route exact path="/Profile" component={AddressInfo} />
