@@ -89,11 +89,18 @@ export class SignUp extends React.Component<SignUpProps, SignUpState> {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
+          console.log(data.sessionToken);
           this.props.updateToken(data.sessionToken);
+          let checkToken = data.sessionToken;
+          if (checkToken === undefined) {
+            alert("Please try again");
+            return;
+          } else {
+            alert("You have successfully signed up!");
+          }
         });
-      console.log("Registration can be done");
     } else {
-      console.log("You cannot be registered");
+      alert("Password is not allowed");
     }
   };
 

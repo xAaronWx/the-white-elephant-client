@@ -81,11 +81,18 @@ export class LogIn extends React.Component<LogInProps, LogInState> {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
+          console.log(data.sessionToken);
           this.props.updateToken(data.sessionToken);
+          let checkToken = data.sessionToken;
+          if (checkToken === undefined) {
+            alert("Please try again");
+            return;
+          } else {
+            alert("You have successfully logged in!");
+          }
         });
-      console.log("Login was successful");
     } else {
-      console.log("You cannot be logged in");
+      alert("Your password is incorrect");
     }
   };
 
