@@ -1,8 +1,8 @@
 import React from "react";
 
 export interface AddressCreateProps {
-  fetchAddress: Function;
   token: string;
+  fetchAddress: Function;
 }
 
 export interface AddressCreateState {
@@ -103,7 +103,7 @@ class AddressCreate extends React.Component<
               </div>
               <br></br>
               <div className="submit">
-                <button>Update Contact Info</button>
+                <button>Add Address Info</button>
               </div>
             </form>
           </div>

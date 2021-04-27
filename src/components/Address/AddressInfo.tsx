@@ -1,10 +1,15 @@
 import React from "react";
+import AddressCreate from "./AddressCreate";
+import AddressTableAndDelete from "./AddressTableAndDelete";
+import { IUserAddress } from "./interfaces";
 
 export interface AddressInfoProps {
   token: string;
 }
 
-export interface AddressInfoState {}
+export interface AddressInfoState {
+  userAddress: IUserAddress[];
+}
 
 class AddressInfo extends React.Component<AddressInfoProps, AddressInfoState> {
   constructor(props: AddressInfoProps) {
@@ -44,6 +49,19 @@ class AddressInfo extends React.Component<AddressInfoProps, AddressInfoState> {
     return (
       <div>
         <h2>Update your address info</h2>
+        <div>
+          <AddressCreate
+            token={this.props.token}
+            fetchAddress={this.fetchAddress()}
+          />
+          {this.state.userAddress.length > 0 ? (
+            <AddressTableAndDelete
+              token={this.props.token}
+              userAddress={this.state.userAddress}
+              fetchAddress={this.fetchAddress()}
+            />
+          ) : null}
+        </div>
       </div>
     );
   }
