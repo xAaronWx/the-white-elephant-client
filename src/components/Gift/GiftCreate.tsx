@@ -64,7 +64,7 @@ class GiftCreate extends React.Component<GiftCreateProps, GiftCreateState> {
       <div>
         <div>
           <div>
-            <h2>Create Your Contact Information</h2>
+            <h2>Share a Gift</h2>
             <form onSubmit={this.handleSubmit}>
               <div>
                 <label htmlFor="">Gift Type</label>
@@ -115,7 +115,7 @@ class GiftCreate extends React.Component<GiftCreateProps, GiftCreateState> {
               </div>
               <br></br>
               <div className="submit">
-                <button>Add Address Info</button>
+                <button>Submit your gift</button>
               </div>
             </form>
           </div>

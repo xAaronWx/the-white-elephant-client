@@ -37,7 +37,7 @@ class GiftUpdate extends React.Component<GiftUpdateProps, GiftUpdateState> {
     };
   }
 
-  UpdateGift = (event: any) => {
+  updateGift = (event: any) => {
     event.preventDefault();
     console.log(this.props.giftUpdate);
     let token = this.props.token
@@ -82,9 +82,9 @@ class GiftUpdate extends React.Component<GiftUpdateProps, GiftUpdateState> {
         <Modal isOpen={!this.state.modal} toggle={this.toggle}>
           <ModalHeader>Edit Address</ModalHeader>
           <ModalBody>
-            <Form onSubmit={this.UpdateGift}>
+            <Form onSubmit={this.updateGift}>
               <FormGroup>
-                <Label htmlFor="itemtype">Item Type:</Label>
+                <Label htmlFor="itemType">Item Type:</Label>
                 <Input
                   name="itemType"
                   value={this.props.giftUpdate.itemType}

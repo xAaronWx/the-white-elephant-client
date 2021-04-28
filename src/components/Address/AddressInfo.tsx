@@ -48,20 +48,17 @@ class AddressInfo extends React.Component<AddressInfoProps, AddressInfoState> {
     console.log(this.state.userAddress);
     return (
       <div>
-        <h2>Update your address info</h2>
+        <h3>If you would like to add your address info, please do so below</h3>
         <div>
-          {/* {this.state.userAddress.length > 0 ? ( */}
+          <AddressCreate
+            token={this.props.token}
+            fetchAddress={this.fetchAddress}
+          />
+          <br />
           <AddressTableAndDelete
             token={this.props.token}
             fetchAddress={this.fetchAddress}
             userAddress={this.state.userAddress}
-          />
-          {/* ) : (
-            <></>
-          )} */}
-          <AddressCreate
-            token={this.props.token}
-            fetchAddress={this.fetchAddress}
           />
         </div>
       </div>

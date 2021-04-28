@@ -49,6 +49,18 @@ class GiftInfo extends React.Component<GiftInfoProps, GiftInfoState> {
     return (
       <div>
         <h2>These are your gifts</h2>
+        <div>
+          <GiftCreate
+            token={this.props.token}
+            fetchMyGifts={this.fetchMyGifts}
+          />
+          <br />
+          <GiftTableAndDelete
+            token={this.props.token}
+            fetchMyGifts={this.fetchMyGifts}
+            myGifts={this.state.myGifts}
+          />
+        </div>
       </div>
     );
   }

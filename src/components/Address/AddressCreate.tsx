@@ -63,7 +63,7 @@ class AddressCreate extends React.Component<
       <div>
         <div>
           <div>
-            <h2>Create Your Contact Information</h2>
+            <h3>Create Your Contact Information</h3>
             <form onSubmit={this.handleSubmit}>
               <div>
                 <label htmlFor="street">Street</label>

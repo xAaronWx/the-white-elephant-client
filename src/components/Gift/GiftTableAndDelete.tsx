@@ -12,7 +12,8 @@ import { IGifts } from "./interface";
 export interface GiftTableAndDeleteProps {
   token: string;
   fetchMyGifts: Function;
-  myGifts: IGifts[];
+  // myGifts: IGifts[];
+  myGifts: any;
 }
 
 export interface GiftTableAndDeleteState {}
@@ -44,7 +45,33 @@ class GiftTableAndDelete extends React.Component<
   // };
 
   render() {
-    return <div>Gift Table Delete</div>;
+    console.log(this.props.myGifts);
+    return (
+      <div className="wrapper">
+        <h2>Gift Table/Delete</h2>
+        <Card>
+          <CardBody>
+            <CardTitle tag="h5">Your Gifts</CardTitle>
+            <CardSubtitle tag="h6" className="mb-2 text-muted">
+              {this.props.myGifts.name}
+            </CardSubtitle>
+            <CardText>
+              Street: {this.props.myGifts.name}
+              <br></br>
+              City: {this.props.myGifts.name}
+              <br></br>State: {this.props.myGifts.name}
+              <br></br>Zipcode: {this.props.myGifts.name}
+            </CardText>
+            <GiftUpdate
+              token={this.props.token}
+              giftUpdate={this.props.myGifts}
+              fetchMyGifts={this.props.fetchMyGifts}
+            />
+            <Button>Button</Button>
+          </CardBody>
+        </Card>
+      </div>
+    );
   }
 }
 

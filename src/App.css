@@ -57,6 +57,7 @@ div {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("../src/assets/WhiteElephant-BG.png");
+  background-attachment: fixed;
 }
 
 .form-wrapper {
