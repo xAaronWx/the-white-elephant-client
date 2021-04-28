@@ -13,7 +13,8 @@ import { IUserAddress } from "./interfaces";
 export interface AddressTableAndDeleteProps {
   token: string;
   fetchAddress: Function;
-  userAddress: IUserAddress[];
+  // userAddress: IUserAddress[];
+  userAddress: any;
 }
 
 export interface AddressTableAndDeleteState {}
@@ -46,30 +47,35 @@ class AddressTableAndDelete extends React.Component<
   // };
 
   render() {
-    console.log(this.props.userAddress[0]);
+    console.log(this.props.userAddress);
     return (
       <div className="wrapper">
-        <Card className="profile-display-form-wrapper">
-          <CardBody>
-            <CardTitle tag="h5">User Profile</CardTitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">
-              {this.props.userAddress[0].city}
-            </CardSubtitle>
-            <CardText>
-              Street: {this.props.userAddress[0].street}
-              <br></br>
-              City: {this.props.userAddress[0].city}
-              <br></br>State: {this.props.userAddress[0].state}
-              <br></br>Zipcode: {this.props.userAddress[0].zipcode}
-            </CardText>
-            <AddressUpdate
-              token={this.props.token}
-              address={this.props.userAddress[0]}
-              fetchAddress={this.props.fetchAddress}
-            />
-            {/* <Button onClick={(e) => this.deleteAddress()}>Button</Button> */}
-          </CardBody>
-        </Card>
+        <h2>Hello Address Table</h2>
+        {this.props.userAddress[0] > 0 ? (
+          <Card>
+            <CardBody>
+              <CardTitle tag="h5">User Address</CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted">
+                {this.props.userAddress[0].city}
+              </CardSubtitle>
+              <CardText>
+                Street: {this.props.userAddress[0].street}
+                <br></br>
+                City: {this.props.userAddress[0].city}
+                <br></br>State: {this.props.userAddress[0].state}
+                <br></br>Zipcode: {this.props.userAddress[0].zipcode}
+              </CardText>
+              <AddressUpdate
+                token={this.props.token}
+                address={this.props.userAddress[0]}
+                fetchAddress={this.props.fetchAddress}
+              />
+              {/* <Button onClick={(e) => this.deleteAddress()}>Button</Button> */}
+            </CardBody>
+          </Card>
+        ) : (
+          <></>
+        )}
       </div>
     );
   }

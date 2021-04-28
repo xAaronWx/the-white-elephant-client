@@ -39,7 +39,7 @@ class AddressUpdate extends React.Component<
     };
   }
 
-  UpdateAddress = (event: any) => {
+  updateAddress = (event: any) => {
     event.preventDefault();
     console.log(this.props.address);
     let token = this.props.token
@@ -82,7 +82,7 @@ class AddressUpdate extends React.Component<
         <Modal isOpen={!this.state.modal} toggle={this.toggle}>
           <ModalHeader>Edit Address</ModalHeader>
           <ModalBody>
-            <Form onSubmit={this.UpdateAddress}>
+            <Form onSubmit={this.updateAddress}>
               <FormGroup>
                 <Label htmlFor="street">Street:</Label>
                 <Input

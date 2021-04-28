@@ -8,7 +8,9 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-export interface FindGiftsProps {}
+export interface FindGiftsProps {
+  token: string;
+}
 
 export interface FindGiftsState {}
 
@@ -21,6 +23,26 @@ const useStyles = makeStyles({
 
 export default function FindGifts() {
   const classes = useStyles();
+
+  // fetchAllGifts = () => {
+  //   let token = this.props.token
+  //     ? this.props.token
+  //     : localStorage.getItem("token");
+  //   fetch("http://localhost:3000/address/get", {
+  //     method: "GET",
+  //     headers: new Headers({
+  //       "Content-Type": "application/json",
+  //       Authorization: token ? token : "",
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       this.setState({
+  //         userAddress: data,
+  //       });
+  //     });
+  // };
 
   return (
     <div>

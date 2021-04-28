@@ -61,16 +61,16 @@ class AddressCreate extends React.Component<
   render() {
     return (
       <div>
-        <div className="profile-create-wrapper">
-          <div className="profile-create-form-wrapper">
+        <div>
+          <div>
             <h2>Create Your Contact Information</h2>
             <form onSubmit={this.handleSubmit}>
               <div>
-                <label htmlFor="">Your Address</label>
+                <label htmlFor="street">Street</label>
                 <br></br>
                 <input
                   type="text"
-                  name="Street"
+                  name="street"
                   onChange={(e) => this.setState({ street: e.target.value })}
                 />
               </div>
