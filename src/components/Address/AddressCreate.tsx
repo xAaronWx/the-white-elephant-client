@@ -61,53 +61,48 @@ class AddressCreate extends React.Component<
   render() {
     return (
       <div>
-        <div>
+        <form className="create-wrapper" onSubmit={this.handleSubmit}>
           <div>
-            <h3>Create Your Contact Information</h3>
-            <form onSubmit={this.handleSubmit}>
-              <div>
-                <label htmlFor="street">Street</label>
-                <br></br>
-                <input
-                  type="text"
-                  name="street"
-                  onChange={(e) => this.setState({ street: e.target.value })}
-                />
-              </div>
-              <div>
-                <label htmlFor="city">City</label>
-                <br></br>
-                <input
-                  type="text"
-                  name="city"
-                  onChange={(e) => this.setState({ city: e.target.value })}
-                />
-              </div>
-              <div>
-                <label htmlFor="state">State</label>
-                <br></br>
-                <input
-                  type="text"
-                  name="state"
-                  onChange={(e) => this.setState({ state: e.target.value })}
-                />
-              </div>
-              <div>
-                <label htmlFor="zipcode">Zipcode</label>
-                <br></br>
-                <input
-                  type="text"
-                  name="zipcode"
-                  onChange={(e) => this.setState({ zipcode: e.target.value })}
-                />
-              </div>
-              <br></br>
-              <div className="submit">
-                <button>Add Address Info</button>
-              </div>
-            </form>
+            <label htmlFor="street">Street</label>
+            <br></br>
+            <input
+              type="text"
+              name="street"
+              onChange={(e) => this.setState({ street: e.target.value })}
+            />
           </div>
-        </div>
+          <div>
+            <label htmlFor="city">City</label>
+            <br></br>
+            <input
+              type="text"
+              name="city"
+              onChange={(e) => this.setState({ city: e.target.value })}
+            />
+          </div>
+          <div>
+            <label htmlFor="state">State</label>
+            <br></br>
+            <input
+              type="text"
+              name="state"
+              onChange={(e) => this.setState({ state: e.target.value })}
+            />
+          </div>
+          <div>
+            <label htmlFor="zipcode">Zipcode</label>
+            <br></br>
+            <input
+              type="text"
+              name="zipcode"
+              onChange={(e) => this.setState({ zipcode: e.target.value })}
+            />
+          </div>
+          <br></br>
+          <div className="submit">
+            <button>Add Address Info</button>
+          </div>
+        </form>
       </div>
     );
   }

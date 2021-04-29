@@ -62,64 +62,57 @@ class GiftCreate extends React.Component<GiftCreateProps, GiftCreateState> {
   render() {
     return (
       <div>
-        <div>
+        <form className="create-wrapper" onSubmit={this.handleSubmit}>
           <div>
-            <h2>Share a Gift</h2>
-            <form onSubmit={this.handleSubmit}>
-              <div>
-                <label htmlFor="">Gift Type</label>
-                <br></br>
-                <input
-                  type="text"
-                  name="itemType"
-                  onChange={(e) => this.setState({ itemType: e.target.value })}
-                />
-              </div>
-              <div>
-                <label htmlFor="name">Name</label>
-                <br></br>
-                <input
-                  type="text"
-                  name="name"
-                  onChange={(e) => this.setState({ name: e.target.value })}
-                />
-              </div>
-              <div>
-                <label htmlFor="weight">Weight</label>
-                <br></br>
-                <input
-                  type="text"
-                  name="weight"
-                  onChange={(e) => this.setState({ weight: e.target.value })}
-                />
-              </div>
-              <div>
-                <label htmlFor="description">Description</label>
-                <br></br>
-                <input
-                  type="text"
-                  name="description"
-                  onChange={(e) =>
-                    this.setState({ description: e.target.value })
-                  }
-                />
-              </div>
-              <div>
-                <label htmlFor="giftImage">Gift Image</label>
-                <br></br>
-                <input
-                  type="text"
-                  name="gift image"
-                  onChange={(e) => this.setState({ giftImage: e.target.value })}
-                />
-              </div>
-              <br></br>
-              <div className="submit">
-                <button>Submit your gift</button>
-              </div>
-            </form>
+            <label htmlFor="">Gift Type</label>
+            <br></br>
+            <input
+              type="text"
+              name="itemType"
+              onChange={(e) => this.setState({ itemType: e.target.value })}
+            />
           </div>
-        </div>
+          <div>
+            <label htmlFor="name">Name</label>
+            <br></br>
+            <input
+              type="text"
+              name="name"
+              onChange={(e) => this.setState({ name: e.target.value })}
+            />
+          </div>
+          <div>
+            <label htmlFor="weight">Weight</label>
+            <br></br>
+            <input
+              type="text"
+              name="weight"
+              onChange={(e) => this.setState({ weight: e.target.value })}
+            />
+          </div>
+          <div>
+            <label htmlFor="description">Description</label>
+            <br></br>
+            <input
+              type="text"
+              name="description"
+              onChange={(e) => this.setState({ description: e.target.value })}
+            />
+          </div>
+          <div>
+            <label htmlFor="giftImage">Gift Image</label>
+            <br></br>
+            <input
+              type="text"
+              name="gift image"
+              onChange={(e) => this.setState({ giftImage: e.target.value })}
+            />
+          </div>
+          <br></br>
+          <div className="submit">
+            <button>Submit your gift</button>
+          </div>
+        </form>
       </div>
     );
   }

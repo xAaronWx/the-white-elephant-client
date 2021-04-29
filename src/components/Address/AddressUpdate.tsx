@@ -81,49 +81,51 @@ class AddressUpdate extends React.Component<
           Edit Your Address
         </Button>
         <Modal isOpen={!this.state.modal} toggle={this.toggle}>
-          <ModalHeader>Edit Address</ModalHeader>
-          <ModalBody>
-            <Form onSubmit={this.updateAddress}>
-              <FormGroup>
-                <Label htmlFor="street">Street:</Label>
-                <Input
-                  name="street"
-                  value={this.props.address.street}
-                  onChange={(e) => this.setState({ street: e.target.value })}
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="city">City:</Label>
-                <Input
-                  name="city"
-                  value={this.props.address.city}
-                  onChange={(e) => this.setState({ city: e.target.value })}
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="state">State:</Label>
-                <Input
-                  name="state"
-                  value={this.props.address.state}
-                  onChange={(e) => this.setState({ state: e.target.value })}
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="zipcode">Zipcode:</Label>
-                <Input
-                  name="zipcode"
-                  value={this.props.address.zipcode}
-                  onChange={(e) => this.setState({ zipcode: e.target.value })}
-                />
-              </FormGroup>
-              <Button color="primary" type="submit" onClick={this.toggle}>
-                Submit Changes
-              </Button>
-              <Button color="secondary" onClick={this.toggle}>
-                Cancel
-              </Button>
-            </Form>
-          </ModalBody>
+          <div className="wrapper">
+            <ModalHeader>Edit Address</ModalHeader>
+            <ModalBody>
+              <Form onSubmit={this.updateAddress}>
+                <FormGroup>
+                  <Label htmlFor="street">Street:</Label>
+                  <input
+                    name="street"
+                    value={this.props.address.street}
+                    onChange={(e) => this.setState({ street: e.target.value })}
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label htmlFor="city">City:</Label>
+                  <Input
+                    name="city"
+                    value={this.props.address.city}
+                    onChange={(e) => this.setState({ city: e.target.value })}
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label htmlFor="state">State:</Label>
+                  <Input
+                    name="state"
+                    value={this.props.address.state}
+                    onChange={(e) => this.setState({ state: e.target.value })}
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label htmlFor="zipcode">Zipcode:</Label>
+                  <Input
+                    name="zipcode"
+                    value={this.props.address.zipcode}
+                    onChange={(e) => this.setState({ zipcode: e.target.value })}
+                  />
+                </FormGroup>
+                <Button color="primary" type="submit" onClick={this.toggle}>
+                  Submit Changes
+                </Button>
+                <Button color="secondary" onClick={this.toggle}>
+                  Cancel
+                </Button>
+              </Form>
+            </ModalBody>
+          </div>
         </Modal>
       </div>
     );

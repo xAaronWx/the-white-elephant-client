@@ -50,7 +50,6 @@ class AddressTableAndDelete extends React.Component<
     console.log(this.props.userAddress);
     return (
       <div className="wrapper">
-        <h2>Hello Address Table</h2>
         <Card>
           <CardBody>
             <CardTitle tag="h5">User Address</CardTitle>

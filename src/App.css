@@ -40,6 +40,23 @@ font-family: 'Reem Kufi', sans-serif; */
   background-color: #194350;
 }
 
+.create-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 80%;
+  min-width: 50px;
+  min-height: 100px;
+  padding: 10px 10px;
+  border-radius: 6px;
+  box-shadow: 0px 8px 20px #222;
+  background-color: #fefefe;
+}
+
+.compDiv {
+  background-color: #9dbeb9;
+}
+
 /* SIGN UP MAIN PAGE STYLE */
 p,
 div {
