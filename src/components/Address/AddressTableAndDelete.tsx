@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-} from "reactstrap";
+import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import AddressUpdate from "./AddressUpdate";
 import { IUserAddress } from "../interfaces";
 
@@ -52,8 +45,8 @@ class AddressTableAndDelete extends React.Component<
       <div className="wrapper">
         <Card>
           <CardBody>
-            <CardTitle tag="h5">User Address</CardTitle>
-            <CardText>
+            <CardTitle tag="h2">Address Details</CardTitle>
+            <CardText className="card-text">
               Street: {this.props.userAddress.street}
               <br></br>
               City: {this.props.userAddress.city}
@@ -65,7 +58,6 @@ class AddressTableAndDelete extends React.Component<
               address={this.props.userAddress}
               fetchAddress={this.props.fetchAddress}
             />
-            <Button>Button</Button>
           </CardBody>
         </Card>
       </div>
