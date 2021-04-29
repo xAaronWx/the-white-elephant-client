@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-  CardColumns,
-} from "reactstrap";
+import { CardColumns } from "reactstrap";
 import GiftUpdate from "./GiftUpdate";
 import { IGifts } from "../interfaces";
 import GiftCard from "./GiftCard";
@@ -60,12 +52,12 @@ class GiftTableAndDelete extends React.Component<
   render() {
     console.log(this.props.myGifts);
     return (
-      <div>
+      <div className="wrapper">
         <h3>Gift Table</h3>
         <CardColumns>
           {this.state.giftInformation.length > 0 ? (
             this.state.giftInformation.map((Gift: IGifts, index: number) => (
-              <GiftCard gift={Gift} key={index} />
+              <GiftCard gift={this.props.myGifts} key={index} />
             ))
           ) : (
             <></>

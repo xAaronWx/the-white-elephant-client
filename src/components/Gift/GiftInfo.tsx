@@ -47,7 +47,7 @@ class GiftInfo extends React.Component<GiftInfoProps, GiftInfoState> {
   render() {
     console.log(this.state.myGifts);
     return (
-      <div>
+      <div className="compDiv">
         <h2>View and submit your offered gifts</h2>
         <GiftCreate token={this.props.token} fetchMyGifts={this.fetchMyGifts} />
         <br />
