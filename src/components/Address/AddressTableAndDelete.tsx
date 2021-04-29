@@ -8,7 +8,7 @@ import {
   Button,
 } from "reactstrap";
 import AddressUpdate from "./AddressUpdate";
-import { IUserAddress } from "./interfaces";
+import { IUserAddress } from "../interfaces";
 
 export interface AddressTableAndDeleteProps {
   token: string;

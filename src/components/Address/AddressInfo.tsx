@@ -1,7 +1,7 @@
 import React from "react";
 import AddressCreate from "./AddressCreate";
 import AddressTableAndDelete from "./AddressTableAndDelete";
-import { IUserAddress } from "./interfaces";
+import { IUserAddress } from "../interfaces";
 
 export interface AddressInfoProps {
   token: string;

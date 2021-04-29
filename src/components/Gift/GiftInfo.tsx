@@ -1,7 +1,7 @@
 import React from "react";
 import GiftCreate from "./GiftCreate";
 import GiftTableAndDelete from "./GiftTableAndDelete";
-import { IGifts } from "./interface";
+import { IGifts } from "../interfaces";
 
 export interface GiftInfoProps {
   token: string;

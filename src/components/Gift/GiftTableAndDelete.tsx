@@ -6,9 +6,11 @@ import {
   CardTitle,
   CardSubtitle,
   Button,
+  CardColumns,
 } from "reactstrap";
 import GiftUpdate from "./GiftUpdate";
-import { IGifts } from "./interface";
+import { IGifts } from "../interfaces";
+import GiftCard from "./GiftCard";
 export interface GiftTableAndDeleteProps {
   token: string;
   fetchMyGifts: Function;
@@ -16,7 +18,9 @@ export interface GiftTableAndDeleteProps {
   myGifts: any;
 }
 
-export interface GiftTableAndDeleteState {}
+export interface GiftTableAndDeleteState {
+  giftInformation: any;
+}
 
 class GiftTableAndDelete extends React.Component<
   GiftTableAndDeleteProps,
@@ -24,7 +28,16 @@ class GiftTableAndDelete extends React.Component<
 > {
   constructor(props: GiftTableAndDeleteProps) {
     super(props);
-    this.state = {};
+    this.state = { giftInformation: [] };
+  }
+
+  componentDidMount() {
+    fetch(this.props.myGifts)
+      .then((res) => res.json())
+      .then((json: IGifts) => {
+        console.log(json);
+        this.setState({ giftInformation: json.giftImage });
+      });
   }
 
   // deleteGift = () => {
@@ -47,29 +60,17 @@ class GiftTableAndDelete extends React.Component<
   render() {
     console.log(this.props.myGifts);
     return (
-      <div className="wrapper">
-        <h2>Gift Table/Delete</h2>
-        <Card>
-          <CardBody>
-            <CardTitle tag="h5">Your Gifts</CardTitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">
-              {this.props.myGifts.name}
-            </CardSubtitle>
-            <CardText>
-              Street: {this.props.myGifts.name}
-              <br></br>
-              City: {this.props.myGifts.name}
-              <br></br>State: {this.props.myGifts.name}
-              <br></br>Zipcode: {this.props.myGifts.name}
-            </CardText>
-            <GiftUpdate
-              token={this.props.token}
-              giftUpdate={this.props.myGifts}
-              fetchMyGifts={this.props.fetchMyGifts}
-            />
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
+      <div>
+        <h3>Gift Table</h3>
+        <CardColumns>
+          {this.state.giftInformation.length > 0 ? (
+            this.state.giftInformation.map((Gift: IGifts, index: number) => (
+              <GiftCard gift={Gift} key={index} />
+            ))
+          ) : (
+            <></>
+          )}
+        </CardColumns>
       </div>
     );
   }
