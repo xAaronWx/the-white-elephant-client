@@ -23,15 +23,6 @@ class GiftTableAndDelete extends React.Component<
     this.state = { giftInformation: [] };
   }
 
-  componentDidMount() {
-    fetch(this.props.myGifts)
-      .then((res) => res.json())
-      .then((json: IGifts) => {
-        console.log(json);
-        this.setState({ giftInformation: json.giftImage });
-      });
-  }
-
   // deleteGift = () => {
   //   let token = this.props.token
   //     ? this.props.token

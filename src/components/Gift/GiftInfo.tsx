@@ -1,7 +1,8 @@
 import React from "react";
 import GiftCreate from "./GiftCreate";
-import GiftTableAndDelete from "./GiftTableAndDelete";
+import { CardColumns } from "reactstrap";
 import { IGifts } from "../interfaces";
+import GiftCard from "./GiftCard";
 
 export interface GiftInfoProps {
   token: string;
@@ -47,15 +48,19 @@ class GiftInfo extends React.Component<GiftInfoProps, GiftInfoState> {
   render() {
     console.log(this.state.myGifts);
     return (
-      <div className="compDiv">
+      <div>
         <h2>View and submit your offered gifts</h2>
         <GiftCreate token={this.props.token} fetchMyGifts={this.fetchMyGifts} />
         <br />
-        <GiftTableAndDelete
-          token={this.props.token}
-          fetchMyGifts={this.fetchMyGifts}
-          myGifts={this.state.myGifts}
-        />
+        <CardColumns>
+          {this.state.myGifts.length > 0 ? (
+            this.state.myGifts.map((Gift: IGifts, index: number) => (
+              <GiftCard gift={Gift} key={index} />
+            ))
+          ) : (
+            <></>
+          )}
+        </CardColumns>
       </div>
     );
   }

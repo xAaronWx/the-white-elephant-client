@@ -11,7 +11,7 @@ import {
 } from "reactstrap";
 
 export interface GiftCardProps {
-  gift: IGifts;
+  gift: any;
 }
 
 export interface GiftCardState {}
@@ -22,12 +22,13 @@ class GiftCard extends React.Component<GiftCardProps, GiftCardState> {
     this.state = {};
   }
   render() {
+    console.log(this.props.gift.id);
     return (
       <div>
         <Card>
           <CardImg
             top
-            width="10px"
+            width="30px"
             src={this.props.gift.giftImage}
             alt="Card image cap"
           />
