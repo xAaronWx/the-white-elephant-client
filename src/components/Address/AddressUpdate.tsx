@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-} from "reactstrap";
+import { Button, Modal, ModalBody } from "reactstrap";
 
 export interface AddressUpdateProps {
   token: string;
@@ -76,54 +66,46 @@ class AddressUpdate extends React.Component<
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Button color="primary" onClick={this.toggle}>
           Edit Your Address
         </Button>
         <Modal isOpen={!this.state.modal} toggle={this.toggle}>
           <div className="wrapper">
             <h3>Edit Address</h3>
-            <ModalBody>
-              <Form onSubmit={this.updateAddress}>
-                <FormGroup>
-                  <Label htmlFor="street">Street:</Label>
-                  <input
-                    name="street"
-                    value={this.state.street}
-                    onChange={(e) => this.setState({ street: e.target.value })}
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="city">City:</Label>
-                  <Input
-                    name="city"
-                    value={this.state.city}
-                    onChange={(e) => this.setState({ city: e.target.value })}
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="state">State (abbreviated) :</Label>
-                  <Input
-                    name="state"
-                    value={this.state.state}
-                    onChange={(e) => this.setState({ state: e.target.value })}
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="zipcode">Zipcode:</Label>
-                  <Input
-                    name="zipcode"
-                    value={this.state.zipcode}
-                    onChange={(e) => this.setState({ zipcode: e.target.value })}
-                  />
-                </FormGroup>
+            <ModalBody style={{ paddingLeft: "100px" }}>
+              <form className="create-wrapper" onSubmit={this.updateAddress}>
+                <label htmlFor="street">Street:</label>
+                <input
+                  name="street"
+                  value={this.state.street}
+                  onChange={(e) => this.setState({ street: e.target.value })}
+                />
+                <label htmlFor="city">City:</label>
+                <input
+                  name="city"
+                  value={this.state.city}
+                  onChange={(e) => this.setState({ city: e.target.value })}
+                />
+                <label htmlFor="state">State (abbreviated) :</label>
+                <input
+                  name="state"
+                  value={this.state.state}
+                  onChange={(e) => this.setState({ state: e.target.value })}
+                />
+                <label htmlFor="zipcode">Zipcode:</label>
+                <input
+                  name="zipcode"
+                  value={this.state.zipcode}
+                  onChange={(e) => this.setState({ zipcode: e.target.value })}
+                />
                 <Button color="primary" type="submit" onClick={this.toggle}>
                   Submit Changes
                 </Button>
                 <Button color="secondary" onClick={this.toggle}>
                   Cancel
                 </Button>
-              </Form>
+              </form>
             </ModalBody>
           </div>
         </Modal>

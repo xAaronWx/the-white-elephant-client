@@ -61,7 +61,7 @@ class GiftCreate extends React.Component<GiftCreateProps, GiftCreateState> {
 
   render() {
     return (
-      <div>
+      <div style={{ marginLeft: "120px" }}>
         <form className="create-wrapper" onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="">Gift Type</label>
