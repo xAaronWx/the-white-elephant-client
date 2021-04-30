@@ -51,10 +51,10 @@ class AddressInfo extends React.Component<AddressInfoProps, AddressInfoState> {
         <h2 className="comp-headline">
           IF YOU WOULD LIKE TO ADD YOUR ADDRESS INFO, PLEASE DO SO BELOW
         </h2>
-        <AddressCreate
+        {/* <AddressCreate
           token={this.props.token}
           fetchAddress={this.fetchAddress}
-        />
+        /> */}
         <br />
         <AddressTableAndDelete
           token={this.props.token}

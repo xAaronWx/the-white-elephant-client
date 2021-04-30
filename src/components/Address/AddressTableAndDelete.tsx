@@ -47,16 +47,16 @@ class AddressTableAndDelete extends React.Component<
           <CardBody>
             <CardTitle>Current Address Details</CardTitle>
             <CardText className="card-text">
-              <span className="span-text">Street:</span>
+              <span className="span-text">Street</span> :
               {this.props.userAddress.street}
               <hr />
-              <span className="span-text">City:</span>
+              <span className="span-text">City</span> :
               {this.props.userAddress.city}
               <hr />
-              <span className="span-text">State:</span>
+              <span className="span-text">State</span> :
               {this.props.userAddress.state}
               <hr />
-              <span className="span-text">Zipcode:</span>
+              <span className="span-text">Zipcode</span> :
               {this.props.userAddress.zipcode}
             </CardText>
             <AddressUpdate

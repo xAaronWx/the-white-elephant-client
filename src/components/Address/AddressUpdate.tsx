@@ -82,14 +82,14 @@ class AddressUpdate extends React.Component<
         </Button>
         <Modal isOpen={!this.state.modal} toggle={this.toggle}>
           <div className="wrapper">
-            <ModalHeader>Edit Address</ModalHeader>
+            <h3>Edit Address</h3>
             <ModalBody>
               <Form onSubmit={this.updateAddress}>
                 <FormGroup>
                   <Label htmlFor="street">Street:</Label>
                   <input
                     name="street"
-                    value={this.props.address.street}
+                    value={this.state.street}
                     onChange={(e) => this.setState({ street: e.target.value })}
                   />
                 </FormGroup>
@@ -97,15 +97,15 @@ class AddressUpdate extends React.Component<
                   <Label htmlFor="city">City:</Label>
                   <Input
                     name="city"
-                    value={this.props.address.city}
+                    value={this.state.city}
                     onChange={(e) => this.setState({ city: e.target.value })}
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label htmlFor="state">State:</Label>
+                  <Label htmlFor="state">State (abbreviated) :</Label>
                   <Input
                     name="state"
-                    value={this.props.address.state}
+                    value={this.state.state}
                     onChange={(e) => this.setState({ state: e.target.value })}
                   />
                 </FormGroup>
@@ -113,7 +113,7 @@ class AddressUpdate extends React.Component<
                   <Label htmlFor="zipcode">Zipcode:</Label>
                   <Input
                     name="zipcode"
-                    value={this.props.address.zipcode}
+                    value={this.state.zipcode}
                     onChange={(e) => this.setState({ zipcode: e.target.value })}
                   />
                 </FormGroup>
