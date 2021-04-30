@@ -1,5 +1,4 @@
 import React from "react";
-import { IGifts } from "../interfaces";
 import {
   Card,
   CardImg,
@@ -11,7 +10,9 @@ import {
 } from "reactstrap";
 
 export interface GiftCardProps {
+  token: string;
   gift: any;
+  fetchMyGifts: Function;
 }
 
 export interface GiftCardState {}
@@ -21,23 +22,40 @@ class GiftCard extends React.Component<GiftCardProps, GiftCardState> {
     super(props);
     this.state = {};
   }
+
+  deleteGift = () => {
+    let token = this.props.token
+      ? this.props.token
+      : localStorage.getItem("token");
+    fetch(`http://localhost:3000/gift/delete/${this.props.gift.id}`, {
+      method: "DELETE",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: token ? token : "",
+      }),
+    }).then(() => {
+      this.props.fetchMyGifts();
+      // this.props.gift;
+    });
+    console.log(this.props.gift.id);
+  };
+
   render() {
     console.log(this.props.gift.id);
     return (
-      <div>
-        <Card>
+      <div className="gift-wrapper">
+        <Card className="card-style">
           <CardImg
             top
-            width="30px"
+            width="75%"
             src={this.props.gift.giftImage}
             alt="Card image cap"
           />
           <CardBody>
-            {this.props.gift.name}
             <CardTitle>{this.props.gift.name}</CardTitle>
             <CardSubtitle>{this.props.gift.itemType}</CardSubtitle>
             <CardText>{this.props.gift.description}</CardText>
-            <Button>Button</Button>
+            <Button onClick={this.deleteGift}>Remove this gift</Button>
           </CardBody>
         </Card>
       </div>

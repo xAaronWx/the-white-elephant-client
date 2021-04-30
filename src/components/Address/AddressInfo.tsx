@@ -48,7 +48,9 @@ class AddressInfo extends React.Component<AddressInfoProps, AddressInfoState> {
     console.log(this.state.userAddress);
     return (
       <div className="compDiv">
-        <h2>If you would like to add your address info, please do so below</h2>
+        <h2 className="comp-headline">
+          IF YOU WOULD LIKE TO ADD YOUR ADDRESS INFO, PLEASE DO SO BELOW
+        </h2>
         <AddressCreate
           token={this.props.token}
           fetchAddress={this.fetchAddress}

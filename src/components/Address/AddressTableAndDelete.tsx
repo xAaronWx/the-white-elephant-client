@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+import { Card, CardText, CardBody, CardTitle } from "reactstrap";
 import AddressUpdate from "./AddressUpdate";
 import { IUserAddress } from "../interfaces";
 
@@ -42,16 +42,22 @@ class AddressTableAndDelete extends React.Component<
   render() {
     console.log(this.props.userAddress);
     return (
-      <div className="wrapper">
+      <div className="address-wrapper">
         <Card>
           <CardBody>
-            <CardTitle tag="h2">Address Details</CardTitle>
+            <CardTitle>Current Address Details</CardTitle>
             <CardText className="card-text">
-              Street: {this.props.userAddress.street}
-              <br></br>
-              City: {this.props.userAddress.city}
-              <br></br>State: {this.props.userAddress.state}
-              <br></br>Zipcode: {this.props.userAddress.zipcode}
+              <span className="span-text">Street:</span>
+              {this.props.userAddress.street}
+              <hr />
+              <span className="span-text">City:</span>
+              {this.props.userAddress.city}
+              <hr />
+              <span className="span-text">State:</span>
+              {this.props.userAddress.state}
+              <hr />
+              <span className="span-text">Zipcode:</span>
+              {this.props.userAddress.zipcode}
             </CardText>
             <AddressUpdate
               token={this.props.token}

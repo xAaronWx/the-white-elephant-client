@@ -15,6 +15,14 @@ font-family: 'Reem Kufi', sans-serif; */
   color: #194350;
 }
 
+.comp-headline {
+  padding: 10px;
+  letter-spacing: 8px;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 2em;
+  color: #194350;
+}
+
 .subtitle {
   margin: 0;
   padding: 20px;
@@ -49,12 +57,22 @@ font-family: 'Reem Kufi', sans-serif; */
   min-height: 100px;
   padding: 10px 10px;
   border-radius: 6px;
-  box-shadow: 0px 4px 5px #222;
+  /* box-shadow: 0px 4px 5px #222; */
   background-color: #fefefe;
 }
 
+/* .card-style {
+  border-radius: 5px;
+  background-color: ivory;
+} */
+
 .compDiv {
-  background-color: #9dbeb9;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../src/assets/WhiteElephant-BG.png");
+  background-attachment: fixed;
+  /* background-color: #9dbeb9; */
 }
 
 /* SIGN UP MAIN PAGE STYLE */
@@ -63,17 +81,35 @@ div {
   font-family: Lato;
 }
 
-.card-text {
-  font-size: 2em;
+.card-title,
+.span-text {
+  font-size: 35px;
+  text-decoration: underline;
+  font-family: "Cairo", sans-serif;
+  color: #194350;
 }
 
-/* .comp-wrapper {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url("../src/assets/WhiteElephant-BG.png");
-  background-attachment: fixed;
-} */
+.card-text {
+  font-size: 30px;
+  font-family: "Cairo", sans-serif;
+  color: #194350;
+}
+
+.address-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gift-wrapper {
+  padding-top: 40px;
+  width: 20%;
+  display: block;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .wrapper {
   height: 100vh;
