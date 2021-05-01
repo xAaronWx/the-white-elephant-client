@@ -74,7 +74,10 @@ class AddressUpdate extends React.Component<
           <div className="wrapper">
             <h3>Edit Address</h3>
             <ModalBody style={{ paddingLeft: "100px" }}>
-              <form className="create-wrapper" onSubmit={this.updateAddress}>
+              <form
+                className="update-address-wrapper"
+                onSubmit={this.updateAddress}
+              >
                 <label htmlFor="street">Street:</label>
                 <input
                   name="street"

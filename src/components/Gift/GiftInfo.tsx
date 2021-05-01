@@ -51,7 +51,7 @@ class GiftInfo extends React.Component<GiftInfoProps, GiftInfoState> {
       <div className="compDiv">
         <h2 className="comp-headline">VIEW OR OFFER NEW GIFTS</h2>
         <GiftCreate token={this.props.token} fetchMyGifts={this.fetchMyGifts} />
-        <CardColumns>
+        <CardColumns id="gift-columns">
           {this.state.myGifts.length > 0 ? (
             this.state.myGifts.map((Gift: IGifts, index: number) => (
               <GiftCard

@@ -8,6 +8,7 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
+import GiftUpdate from "./GiftUpdate";
 
 export interface GiftCardProps {
   token: string;
@@ -43,7 +44,7 @@ class GiftCard extends React.Component<GiftCardProps, GiftCardState> {
   render() {
     console.log(this.props.gift.id);
     return (
-      <div className="gift-wrapper">
+      <div className="container, gift-wrapper">
         <Card className="card-style">
           <CardImg
             top
@@ -55,6 +56,11 @@ class GiftCard extends React.Component<GiftCardProps, GiftCardState> {
             <CardTitle>{this.props.gift.name}</CardTitle>
             <CardSubtitle>{this.props.gift.itemType}</CardSubtitle>
             <CardText>{this.props.gift.description}</CardText>
+            <GiftUpdate
+              token={this.props.token}
+              fetchMyGifts={this.props.fetchMyGifts}
+              giftUpdate={this.props.gift}
+            />
             <Button onClick={this.deleteGift}>Remove this gift</Button>
           </CardBody>
         </Card>

@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-} from "reactstrap";
+import { Button, Modal, ModalBody } from "reactstrap";
 export interface GiftUpdateProps {
   token: string;
   fetchMyGifts: Function;
@@ -75,64 +66,56 @@ class GiftUpdate extends React.Component<GiftUpdateProps, GiftUpdateState> {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Button color="primary" onClick={this.toggle}>
-          Edit Your Address
+          Update gift details
         </Button>
         <Modal isOpen={!this.state.modal} toggle={this.toggle}>
-          <ModalHeader>Edit Address</ModalHeader>
-          <ModalBody>
-            <Form onSubmit={this.updateGift}>
-              <FormGroup>
-                <Label htmlFor="itemType">Item Type:</Label>
-                <Input
+          <div className="wrapper">
+            <h3>Update Details</h3>
+            <ModalBody style={{ paddingLeft: "100px" }}>
+              <form className="update-gift-wrapper" onSubmit={this.updateGift}>
+                <label htmlFor="itemType">Gift Type:</label>
+                <input
                   name="itemType"
-                  value={this.props.giftUpdate.itemType}
+                  value={this.state.itemType}
                   onChange={(e) => this.setState({ itemType: e.target.value })}
                 />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="name">Name:</Label>
-                <Input
+                <label htmlFor="name">Product Name:</label>
+                <input
                   name="name"
-                  value={this.props.giftUpdate.name}
+                  value={this.state.name}
                   onChange={(e) => this.setState({ name: e.target.value })}
                 />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="weight">Gift Weight:</Label>
-                <Input
+                <label htmlFor="weight">Gift Weight: (optional) </label>
+                <input
                   name="weight"
-                  value={this.props.giftUpdate.weight}
+                  value={this.state.weight}
                   onChange={(e) => this.setState({ weight: e.target.value })}
                 />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="description">Description:</Label>
-                <Input
+                <label htmlFor="description">Description:</label>
+                <input
                   name="description"
-                  value={this.props.giftUpdate.description}
+                  value={this.state.description}
                   onChange={(e) =>
                     this.setState({ description: e.target.value })
                   }
                 />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="giftImage">Gift Image:</Label>
-                <Input
+                <label htmlFor="giftImage">Gift Image: (URL Address) </label>
+                <input
                   name="giftImage"
-                  value={this.props.giftUpdate.giftImage}
+                  value={this.state.giftImage}
                   onChange={(e) => this.setState({ giftImage: e.target.value })}
                 />
-              </FormGroup>
-              <Button color="primary" type="submit" onClick={this.toggle}>
-                Submit Changes
-              </Button>
-              <Button color="secondary" onClick={this.toggle}>
-                Cancel
-              </Button>
-            </Form>
-          </ModalBody>
+                <Button color="primary" type="submit" onClick={this.toggle}>
+                  Submit Changes
+                </Button>
+                <Button color="secondary" onClick={this.toggle}>
+                  Cancel
+                </Button>
+              </form>
+            </ModalBody>
+          </div>
         </Modal>
       </div>
     );
