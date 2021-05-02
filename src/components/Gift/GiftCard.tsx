@@ -47,15 +47,18 @@ class GiftCard extends React.Component<GiftCardProps, GiftCardState> {
       <div className="container, gift-wrapper">
         <Card className="card-style">
           <CardImg
+            id="cardImg"
             top
             width="75%"
             src={this.props.gift.giftImage}
             alt="Card image cap"
           />
           <CardBody>
-            <CardTitle>{this.props.gift.name}</CardTitle>
-            <CardSubtitle>{this.props.gift.itemType}</CardSubtitle>
-            <CardText>{this.props.gift.description}</CardText>
+            <CardTitle id="cardTitle">{this.props.gift.name}</CardTitle>
+            <CardSubtitle id="cardSubtitle">
+              {this.props.gift.itemType}
+            </CardSubtitle>
+            <CardText id="cardDescrip">{this.props.gift.description}</CardText>
             <GiftUpdate
               token={this.props.token}
               fetchMyGifts={this.props.fetchMyGifts}

@@ -45,15 +45,20 @@ class AllGifts extends React.Component<AllGiftsProps, AllGiftsState> {
       <div className="gift-wrapper">
         <Card className="card-style">
           <CardImg
+            id="cardImg"
             top
             width="75%"
             src={this.props.allGifts.giftImage}
             alt="Card image cap"
           />
           <CardBody>
-            <CardTitle>{this.props.allGifts.name}</CardTitle>
-            <CardSubtitle>{this.props.allGifts.itemType}</CardSubtitle>
-            <CardText>{this.props.allGifts.description}</CardText>
+            <CardTitle id="cardTitle">{this.props.allGifts.name}</CardTitle>
+            <CardSubtitle id="cardSubtitle">
+              {this.props.allGifts.itemType}
+            </CardSubtitle>
+            <CardText id="cardDescrip">
+              {this.props.allGifts.description}
+            </CardText>
             <Button>Claim This Gift</Button>
             {/* <Button onClick={this.deleteGift}>Remove this gift</Button> */}
           </CardBody>

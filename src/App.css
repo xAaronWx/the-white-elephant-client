@@ -83,10 +83,24 @@ font-family: 'Reem Kufi', sans-serif; */
   background-color: #fefefe;
 }
 
-/* .card-style {
-  border-radius: 5px;
-  background-color: ivory;
-} */
+#cardImg {
+  box-shadow: 0px 0px 15px;
+}
+
+#cardTitle {
+  font-family: "Reem Kufi";
+}
+
+#cardSubtitle {
+  font-size: larger;
+  font-family: "Cairo";
+  color: #194350;
+}
+
+#cardDescrip {
+  font-size: larger;
+  font-weight: bold;
+}
 
 .compDiv {
   background-size: cover;

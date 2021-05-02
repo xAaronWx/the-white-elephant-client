@@ -73,7 +73,7 @@ class GiftCreate extends React.Component<GiftCreateProps, GiftCreateState> {
             />
           </div>
           <div>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Product Name</label>
             <br></br>
             <input
               type="text"
@@ -100,7 +100,7 @@ class GiftCreate extends React.Component<GiftCreateProps, GiftCreateState> {
             />
           </div>
           <div>
-            <label htmlFor="giftImage">Gift Image</label>
+            <label htmlFor="giftImage">Gift Image (URL Address) </label>
             <br></br>
             <input
               type="text"
