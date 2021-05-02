@@ -42,7 +42,7 @@ class AllGifts extends React.Component<AllGiftsProps, AllGiftsState> {
   render() {
     console.log(this.props.allGifts.id);
     return (
-      <div className="container, gift-wrapper">
+      <div className="gift-wrapper">
         <Card className="card-style">
           <CardImg
             top
