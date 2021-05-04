@@ -41,13 +41,6 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function ButtonAppBar() {
   const classes = useStyles();
 
-  // logout = () => {
-  //   localStorage.clear();
-  //   this.setState({
-  //     token: "",
-  //   });
-  // };
-
   return (
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="fixed">
@@ -87,7 +80,14 @@ export default function ButtonAppBar() {
             variant="contained"
             color="default"
           >
-            <Link className={classes.navLink} to="/">
+            <Link
+              onClick={(event) => {
+                localStorage.clear();
+                window.location.href = "/";
+              }}
+              className={classes.navLink}
+              to="/"
+            >
               Logout
             </Link>
           </Button>

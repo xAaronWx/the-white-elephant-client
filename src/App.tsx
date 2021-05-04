@@ -16,12 +16,7 @@ class App extends React.Component<AppProps, AppState> {
     this.state = { token: "", role: "" };
   }
 
-  // logout = () => {
-  //   localStorage.clear();
-  //   this.setState({
-  //     token: "",
-  //   });
-  // };
+  // LOGOUT FUNCTION IS IN SITEBAR
 
   updateToken = (token: string) => {
     localStorage.setItem("token", token);
