@@ -81,7 +81,7 @@ class AddressCreate extends React.Component<
             />
           </div>
           <div>
-            <label htmlFor="state">State</label>
+            <label htmlFor="state">State (abbreviated)</label>
             <br></br>
             <input
               type="text"
