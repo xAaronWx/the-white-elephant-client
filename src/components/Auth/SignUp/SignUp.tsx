@@ -7,6 +7,7 @@ const Regex = RegExp(
 );
 
 interface SignUpProps {
+  adminLogin: Function;
   updateToken: Function;
   handleToggle: Function;
   name?: any;

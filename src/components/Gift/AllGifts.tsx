@@ -10,6 +10,8 @@ import {
 } from "reactstrap";
 
 export interface AllGiftsProps {
+  token: string;
+  role: string;
   allGifts: any;
   fetchAllGifts: Function;
 }
@@ -19,25 +21,26 @@ export interface AllGiftsState {}
 class AllGifts extends React.Component<AllGiftsProps, AllGiftsState> {
   constructor(props: AllGiftsProps) {
     super(props);
-    this.state = {};
+    this.state = {
+      role: "admin",
+    };
   }
 
-  // deleteGift = () => {
-  //   let token = this.props.token
-  //     ? this.props.token
-  //     : localStorage.getItem("token");
-  //   fetch(`http://localhost:3000/gift/delete/${this.props.gift.id}`, {
-  //     method: "DELETE",
-  //     headers: new Headers({
-  //       "Content-Type": "application/json",
-  //       Authorization: token ? token : "",
-  //     }),
-  //   }).then(() => {
-  //     this.props.fetchMyGifts();
-  //     // this.props.gift;
-  //   });
-  //   console.log(this.props.gift.id);
-  // };
+  deleteGift = () => {
+    let token = this.props.token
+      ? this.props.token
+      : localStorage.getItem("token");
+    fetch(`http://localhost:3000/gift/delete/${this.props.allGifts.id}`, {
+      method: "DELETE",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: token ? token : "",
+      }),
+    }).then(() => {
+      this.props.fetchAllGifts();
+    });
+    console.log(this.props.allGifts.id);
+  };
 
   render() {
     console.log(this.props.allGifts.id);
@@ -60,7 +63,9 @@ class AllGifts extends React.Component<AllGiftsProps, AllGiftsState> {
               {this.props.allGifts.description}
             </CardText>
             <Button>Claim This Gift</Button>
-            {/* <Button onClick={this.deleteGift}>Remove this gift</Button> */}
+            {localStorage.getItem("role") === "admin" ? (
+              <Button onClick={this.deleteGift}>Remove this gift</Button>
+            ) : null}
           </CardBody>
         </Card>
       </div>

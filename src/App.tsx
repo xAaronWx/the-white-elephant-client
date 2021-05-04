@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import { Route } from "react-router-dom";
 import Auth from "./components/Auth/Auth";
 import MainPage from "./components/MainPage/MainPage";
 
@@ -8,20 +7,21 @@ export interface AppProps {}
 
 export interface AppState {
   token: string;
+  role: string;
 }
 
 class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
-    this.state = { token: "" };
+    this.state = { token: "", role: "" };
   }
 
-  clearToken = () => {
-    localStorage.clear();
-    this.setState({
-      token: "",
-    });
-  };
+  // logout = () => {
+  //   localStorage.clear();
+  //   this.setState({
+  //     token: "",
+  //   });
+  // };
 
   updateToken = (token: string) => {
     localStorage.setItem("token", token);
@@ -29,11 +29,17 @@ class App extends React.Component<AppProps, AppState> {
     console.log(token);
   };
 
+  adminLogin = (role: string) => {
+    localStorage.setItem("role", role);
+    this.setState({ role: role });
+    console.log(role);
+  };
+
   protectedViews = () => {
     return localStorage.getItem("token") ? (
-      <MainPage token={this.state.token} />
+      <MainPage token={this.state.token} role={this.state.role} />
     ) : (
-      <Auth updateToken={this.updateToken} />
+      <Auth updateToken={this.updateToken} adminLogin={this.adminLogin} />
     );
   };
 

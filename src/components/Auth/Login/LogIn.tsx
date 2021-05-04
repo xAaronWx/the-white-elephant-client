@@ -5,6 +5,7 @@ const Regex = RegExp(
 );
 
 interface LogInProps {
+  adminLogin: Function;
   updateToken: Function;
   handleToggle: Function;
   name?: any;
@@ -83,6 +84,7 @@ export class LogIn extends React.Component<LogInProps, LogInState> {
           console.log(data);
           console.log(data.sessionToken);
           this.props.updateToken(data.sessionToken);
+          this.props.adminLogin(data.role);
           let checkToken = data.sessionToken;
           if (checkToken === undefined) {
             alert("Please try again");

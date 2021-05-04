@@ -41,6 +41,13 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function ButtonAppBar() {
   const classes = useStyles();
 
+  // logout = () => {
+  //   localStorage.clear();
+  //   this.setState({
+  //     token: "",
+  //   });
+  // };
+
   return (
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="fixed">

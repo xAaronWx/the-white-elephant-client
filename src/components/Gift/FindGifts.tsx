@@ -5,6 +5,7 @@ import AllGifts from "./AllGifts";
 
 export interface FindGiftProps {
   token: string;
+  role: string;
 }
 
 export interface FindGiftState {
@@ -54,6 +55,8 @@ class FindGift extends React.Component<FindGiftProps, FindGiftState> {
             {this.state.allGifts.length > 0 ? (
               this.state.allGifts.map((Gift: IGifts, index: number) => (
                 <AllGifts
+                  token={this.props.token}
+                  role={this.props.role}
                   fetchAllGifts={this.fetchAllGifts}
                   allGifts={Gift}
                   key={index}

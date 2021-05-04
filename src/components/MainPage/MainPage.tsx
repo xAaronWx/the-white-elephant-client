@@ -8,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 
 export interface MainPageProps {
   token: string;
+  role: string;
 }
 
 export interface MainPageState {}
@@ -24,7 +25,9 @@ class MainPage extends React.Component<MainPageProps, MainPageState> {
         <Switch>
           <Route exact path="/Profile" component={AddressInfo} />
           <Route exact path="/YourGifts" component={YourGifts} />
-          <Route exact path="/FindGifts" component={FindGifts} />
+          <Route exact path="/FindGifts">
+            <FindGifts token={this.props.token} role={this.props.role} />
+          </Route>
         </Switch>
         {/* <Footer /> */}
       </div>

@@ -4,6 +4,7 @@ import SignUp from "./SignUp/SignUp";
 
 export interface AuthProps {
   updateToken: Function;
+  adminLogin: Function;
 }
 
 export interface AuthState {
@@ -30,11 +31,13 @@ class Auth extends React.Component<AuthProps, AuthState> {
       <div>
         {this.state.showLogin ? (
           <Login
+            adminLogin={this.props.adminLogin}
             handleToggle={this.handleToggle}
             updateToken={this.props.updateToken}
           />
         ) : (
           <SignUp
+            adminLogin={this.props.adminLogin}
             handleToggle={this.handleToggle}
             updateToken={this.props.updateToken}
           />
