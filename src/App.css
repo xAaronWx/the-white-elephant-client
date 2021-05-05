@@ -54,6 +54,7 @@ font-family: 'Reem Kufi', sans-serif; */
   justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
+  padding-top: 15px;
 }
 
 .create-wrapper {
