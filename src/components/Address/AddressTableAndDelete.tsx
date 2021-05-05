@@ -69,31 +69,3 @@ class AddressTableAndDelete extends React.Component<
 }
 
 export default AddressTableAndDelete;
-
-// {
-//   this.props.userAddress[0] > 0 ? (
-//     <Card>
-//       <CardBody>
-//         <CardTitle tag="h5">User Address</CardTitle>
-//         <CardSubtitle tag="h6" className="mb-2 text-muted">
-//           {this.props.userAddress[0].city}
-//         </CardSubtitle>
-//         <CardText>
-//           Street: {this.props.userAddress[0].street}
-//           <br></br>
-//           City: {this.props.userAddress[0].city}
-//           <br></br>State: {this.props.userAddress[0].state}
-//           <br></br>Zipcode: {this.props.userAddress[0].zipcode}
-//         </CardText>
-//         <AddressUpdate
-//           token={this.props.token}
-//           address={this.props.userAddress[0]}
-//           fetchAddress={this.props.fetchAddress}
-//         />
-//         <Button onClick={(e) => this.deleteAddress()}>Button</Button>
-//       </CardBody>
-//     </Card>
-//   ) : (
-//     <></>
-//   );
-// }

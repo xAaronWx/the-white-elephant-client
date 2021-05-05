@@ -57,7 +57,7 @@ class AllGifts extends React.Component<AllGiftsProps, AllGiftsState> {
           <CardBody>
             <CardTitle id="cardTitle">{this.props.allGifts.name}</CardTitle>
             <CardSubtitle id="cardSubtitle">
-              {this.props.allGifts.itemType}
+              <em>Gift Type: </em> {this.props.allGifts.itemType}
             </CardSubtitle>
             <CardText id="cardDescrip">
               {this.props.allGifts.description}

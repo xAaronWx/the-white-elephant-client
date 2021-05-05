@@ -50,7 +50,7 @@ font-family: 'Reem Kufi', sans-serif; */
 
 #gift-columns {
   display: flex;
-  align-items: flex-end;
+  align-items: stretch;
   justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
@@ -149,7 +149,7 @@ div {
   justify-content: center;
   flex-direction: column;
   background-color: rgba(95, 158, 160, 0.555);
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .wrapper {

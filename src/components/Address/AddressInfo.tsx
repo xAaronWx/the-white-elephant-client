@@ -34,9 +34,11 @@ class AddressInfo extends React.Component<AddressInfoProps, AddressInfoState> {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        this.setState({
-          userAddress: data,
-        });
+        if (data != null) {
+          this.setState({
+            userAddress: data,
+          });
+        }
       });
   };
 
@@ -56,22 +58,11 @@ class AddressInfo extends React.Component<AddressInfoProps, AddressInfoState> {
           fetchAddress={this.fetchAddress}
         />
         <br />
-        <div>
-          {this.state.userAddress.length > 0 ? (
-            this.state.userAddress.map(
-              (Address: IUserAddress, index: number) => (
-                <AddressTableAndDelete
-                  fetchAddress={this.fetchAddress}
-                  token={this.props.token}
-                  address={Address}
-                  key={index}
-                />
-              )
-            )
-          ) : (
-            <></>
-          )}
-        </div>
+        <AddressTableAndDelete
+          fetchAddress={this.fetchAddress}
+          token={this.props.token}
+          address={this.state.userAddress}
+        />
       </div>
     );
   }

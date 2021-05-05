@@ -44,7 +44,7 @@ class GiftCard extends React.Component<GiftCardProps, GiftCardState> {
   render() {
     console.log(this.props.gift.id);
     return (
-      <div className="container, gift-wrapper">
+      <div className="gift-wrapper">
         <Card className="card-style">
           <CardImg
             id="cardImg"
@@ -56,7 +56,7 @@ class GiftCard extends React.Component<GiftCardProps, GiftCardState> {
           <CardBody>
             <CardTitle id="cardTitle">{this.props.gift.name}</CardTitle>
             <CardSubtitle id="cardSubtitle">
-              {this.props.gift.itemType}
+              <em>Gift Type: </em> {this.props.gift.itemType}
             </CardSubtitle>
             <CardText id="cardDescrip">{this.props.gift.description}</CardText>
             <GiftUpdate

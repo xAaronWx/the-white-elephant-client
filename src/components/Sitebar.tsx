@@ -46,7 +46,7 @@ export default function ButtonAppBar() {
       <AppBar className={classes.appBar} position="fixed">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            Hello
+            Welcome to The White Elephant
           </Typography>
           <Button
             className={classes.appButton}
