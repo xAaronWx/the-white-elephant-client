@@ -34,6 +34,7 @@ class AddressInfo extends React.Component<AddressInfoProps, AddressInfoState> {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        //THIS BIT OF CODE WILL KEEP THE APP FROM CRASHING IF NO DATA EXISTS
         if (data != null) {
           this.setState({
             userAddress: data,
