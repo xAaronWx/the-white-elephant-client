@@ -1,4 +1,5 @@
 import React from "react";
+import APIURL from "../helpers/environment";
 
 export interface GiftCreateProps {
   token: string;
@@ -31,7 +32,7 @@ class GiftCreate extends React.Component<GiftCreateProps, GiftCreateState> {
     let token = this.props.token
       ? this.props.token
       : localStorage.getItem("token");
-    fetch("http://localhost:3000/gift/create", {
+    fetch(`${APIURL}/gift/create`, {
       method: "POST",
       body: JSON.stringify({
         itemType: this.state.itemType,

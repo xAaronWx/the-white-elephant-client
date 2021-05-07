@@ -2,6 +2,7 @@ import React from "react";
 import { IGifts } from "../interfaces";
 import { CardColumns } from "reactstrap";
 import AllGifts from "./AllGifts";
+import APIURL from "../helpers/environment";
 
 export interface FindGiftProps {
   token: string;
@@ -25,7 +26,7 @@ class FindGift extends React.Component<FindGiftProps, FindGiftState> {
     let token = this.props.token
       ? this.props.token
       : localStorage.getItem("token");
-    fetch("http://localhost:3000/gift/", {
+    fetch(`${APIURL}/gift/`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

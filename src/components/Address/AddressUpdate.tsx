@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Modal, ModalBody } from "reactstrap";
-
+import APIURL from "../helpers/environment";
 export interface AddressUpdateProps {
   token: string;
   fetchAddress: Function;
@@ -36,7 +36,7 @@ class AddressUpdate extends React.Component<
     let token = this.props.token
       ? this.props.token
       : localStorage.getItem("token");
-    fetch(`http://localhost:3000/address/update/${this.props.address.id}`, {
+    fetch(`${APIURL}/address/update/${this.props.address.id}`, {
       method: "PUT",
       body: JSON.stringify({
         street: this.state.street,

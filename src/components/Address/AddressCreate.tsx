@@ -1,4 +1,5 @@
 import React from "react";
+import APIURL from "../helpers/environment";
 
 export interface AddressCreateProps {
   token: string;
@@ -32,7 +33,7 @@ class AddressCreate extends React.Component<
     let token = this.props.token
       ? this.props.token
       : localStorage.getItem("token");
-    fetch("http://localhost:3000/address/create", {
+    fetch(`${APIURL}/address/create`, {
       method: "POST",
       body: JSON.stringify({
         street: this.state.street,

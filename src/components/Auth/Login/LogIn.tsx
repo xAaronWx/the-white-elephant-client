@@ -1,4 +1,5 @@
 import React from "react";
+import APIURL from "../../helpers/environment";
 
 const Regex = RegExp(
   /^\s?[A-Z0–9]+[A-Z0–9._+-]{0,}@[A-Z0–9._+-]+\.[A-Z0–9]{2,4}\s?$/i
@@ -69,7 +70,7 @@ export class LogIn extends React.Component<LogInProps, LogInState> {
     );
     if (validity == true) {
       // THIS IS WHERE THE ENDPOINT FETCH GOES
-      fetch("http://localhost:3000/user/login", {
+      fetch(`${APIURL}/user/login`, {
         method: "POST",
         body: JSON.stringify({
           email: this.state.email,

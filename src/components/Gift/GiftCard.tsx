@@ -9,6 +9,7 @@ import {
   Button,
 } from "reactstrap";
 import GiftUpdate from "./GiftUpdate";
+import APIURL from "../helpers/environment";
 
 export interface GiftCardProps {
   token: string;
@@ -28,7 +29,7 @@ class GiftCard extends React.Component<GiftCardProps, GiftCardState> {
     let token = this.props.token
       ? this.props.token
       : localStorage.getItem("token");
-    fetch(`http://localhost:3000/gift/delete/${this.props.gift.id}`, {
+    fetch(`${APIURL}/gift/delete/${this.props.gift.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

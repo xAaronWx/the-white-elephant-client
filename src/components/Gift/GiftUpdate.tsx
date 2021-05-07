@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Modal, ModalBody } from "reactstrap";
+import APIURL from "../helpers/environment";
 export interface GiftUpdateProps {
   token: string;
   fetchMyGifts: Function;
@@ -34,7 +35,7 @@ class GiftUpdate extends React.Component<GiftUpdateProps, GiftUpdateState> {
     let token = this.props.token
       ? this.props.token
       : localStorage.getItem("token");
-    fetch(`http://localhost:3000/gift/update/${this.props.giftUpdate.id}`, {
+    fetch(`${APIURL}/gift/update/${this.props.giftUpdate.id}`, {
       method: "PUT",
       body: JSON.stringify({
         itemType: this.state.itemType,

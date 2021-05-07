@@ -3,6 +3,7 @@ import GiftCreate from "./GiftCreate";
 import { CardColumns } from "reactstrap";
 import { IGifts } from "../interfaces";
 import GiftCard from "./GiftCard";
+import APIURL from "../helpers/environment";
 
 export interface GiftInfoProps {
   token: string;
@@ -25,7 +26,7 @@ class GiftInfo extends React.Component<GiftInfoProps, GiftInfoState> {
     let token = this.props.token
       ? this.props.token
       : localStorage.getItem("token");
-    fetch("http://localhost:3000/gift/mine", {
+    fetch(`${APIURL}/gift/mine`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

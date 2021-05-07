@@ -1,6 +1,6 @@
 import userEvent from "@testing-library/user-event";
 import React from "react";
-import APIURL from "../../../helpers/environment";
+import APIURL from "../../helpers/environment";
 
 const Regex = RegExp(
   /^\s?[A-Z0–9]+[A-Z0–9._+-]{0,}@[A-Z0–9._+-]+\.[A-Z0–9]{2,4}\s?$/i
@@ -75,7 +75,7 @@ export class SignUp extends React.Component<SignUpProps, SignUpState> {
     );
     if (validity == true) {
       // THIS IS WHERE THE ENDPOINT FETCH GOES
-      fetch("http://localhost:3000/user/create", {
+      fetch(`${APIURL}/user/create`, {
         method: "POST",
         body: JSON.stringify({
           firstName: this.state.firstName,
