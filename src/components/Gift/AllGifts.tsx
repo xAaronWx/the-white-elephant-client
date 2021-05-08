@@ -8,7 +8,7 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
-import APIURL from "../helpers/environment";
+import APIURL from "../../helpers/environment";
 
 export interface AllGiftsProps {
   token: string;

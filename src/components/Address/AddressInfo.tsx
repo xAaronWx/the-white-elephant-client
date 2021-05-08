@@ -2,7 +2,7 @@ import React from "react";
 import AddressCreate from "./AddressCreate";
 import AddressTableAndDelete from "./AddressTableAndDelete";
 import { IUserAddress } from "../interfaces";
-import APIURL from "../helpers/environment";
+import APIURL from "../../helpers/environment";
 
 export interface AddressInfoProps {
   token: string;

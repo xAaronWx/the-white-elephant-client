@@ -2,7 +2,7 @@ import React from "react";
 import { IGifts } from "../interfaces";
 import { CardColumns } from "reactstrap";
 import AllGifts from "./AllGifts";
-import APIURL from "../helpers/environment";
+import APIURL from "../../helpers/environment";
 
 export interface FindGiftProps {
   token: string;

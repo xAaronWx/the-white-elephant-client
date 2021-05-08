@@ -1,5 +1,5 @@
 import React from "react";
-import APIURL from "../helpers/environment";
+import APIURL from "../../helpers/environment";
 
 export interface AddressCreateProps {
   token: string;

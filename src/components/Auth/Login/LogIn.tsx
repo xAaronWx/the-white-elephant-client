@@ -1,5 +1,5 @@
 import React from "react";
-import APIURL from "../../helpers/environment";
+import APIURL from "../../../helpers/environment";
 
 const Regex = RegExp(
   /^\s?[A-Z0–9]+[A-Z0–9._+-]{0,}@[A-Z0–9._+-]+\.[A-Z0–9]{2,4}\s?$/i

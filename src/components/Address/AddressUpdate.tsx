@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Modal, ModalBody } from "reactstrap";
-import APIURL from "../helpers/environment";
+import APIURL from "../../helpers/environment";
 export interface AddressUpdateProps {
   token: string;
   fetchAddress: Function;

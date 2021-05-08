@@ -3,7 +3,7 @@ import GiftCreate from "./GiftCreate";
 import { CardColumns } from "reactstrap";
 import { IGifts } from "../interfaces";
 import GiftCard from "./GiftCard";
-import APIURL from "../helpers/environment";
+import APIURL from "../../helpers/environment";
 
 export interface GiftInfoProps {
   token: string;

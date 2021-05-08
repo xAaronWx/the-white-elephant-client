@@ -9,7 +9,7 @@ import {
   Button,
 } from "reactstrap";
 import GiftUpdate from "./GiftUpdate";
-import APIURL from "../helpers/environment";
+import APIURL from "../../helpers/environment";
 
 export interface GiftCardProps {
   token: string;
